@@ -34,6 +34,8 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem "factory_girl_rails"
+  gem 'json_spec'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
