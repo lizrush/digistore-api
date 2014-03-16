@@ -35,6 +35,9 @@ describe ProductsController do
       response.body.should be_json_eql(Product.first.to_json)
                                         .excluding(:description)
     end
+  end
+
+    describe "creating a product" do
 
     it "should create a product" do
       params = {name: "hello",
