@@ -15,7 +15,8 @@ describe ProductsController do
     end
 
     it "should get a list of products as json" do
-      2.times{FactoryGirl.create(:product)}
+      product1 = FactoryGirl.create(:product)
+      product2 = FactoryGirl.create(:product {name: "test product"})
       get :index, @valid_params
       response.should be_success
       response.body.should be_json_eql({results: Product.all}
