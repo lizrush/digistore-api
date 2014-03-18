@@ -3,6 +3,6 @@ DigistoreApi::Application.routes.draw do
     resources :users
     resources :products
     resources :orders
-    resources :cart, only: [:show, :create]
+    resources :items, only: [:show, :create]
   end
 end
