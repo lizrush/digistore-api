@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    set_product
   end
 
   def create
@@ -18,10 +18,19 @@ class ProductsController < ApplicationController
     end
   end
 
-  def edit
+  def destroy
+    set_product
+    @product.destroy
+    render json: "", status: :no_content
   end
 
-  def delete
+  def update
+    set_product
+    if @product.update(product_params)
+      render "show"
+    else
+      render json: @product.errors, status: :unprocessable_entity
+    end
   end
 
   private
@@ -30,4 +39,7 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :description, :price, :image, :avatar)
   end
 
+  def set_product
+    @product = Product.find(params[:id])
+  end
 end
