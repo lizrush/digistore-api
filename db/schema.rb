@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20140321015652) do
 
   create_table "products", force: true do |t|
     t.string   "name"
-    t.integer  "price"
+    t.string   "price"
     t.string   "description"
     t.string   "image"
     t.string   "avatar"
