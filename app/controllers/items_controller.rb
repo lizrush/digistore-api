@@ -9,13 +9,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-
-    if @item.save
-      render json: @item, status: :created
-    else
-      render json: @item.errors, status: :unprocessable_entity
-    end
+    Item.create_all_items(params[:items][:records])
   end
 
    def destroy
