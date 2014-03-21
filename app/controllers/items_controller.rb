@@ -40,6 +40,11 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:product, :quantity, :currentprice)
+      params.require(:item).permit(:product_id,
+                                   :quantity,
+                                   :currentprice,
+                                   :product_avatar,
+                                   :product_name,
+                                   :subtotal)
     end
 end
