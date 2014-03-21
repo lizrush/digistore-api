@@ -8,6 +8,7 @@ class CreateOrders < ActiveRecord::Migration
       t.string :expdate
       t.string :ccv
       t.string :ccnumber
+      t.string :total
 
       t.timestamps
     end
