@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     if @product.save
-      render "show"
+      render "index"
     else
       render json: @product.errors, status: :unprocessable_entity
     end
@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
   def destroy
     set_product
     @product.destroy
-    render json: "", status: :no_content
+    render "index"
   end
 
   def update

@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
    def destroy
     set_item
     @item.destroy
-    render json: "", status: :no_content
+    render "index"
   end
 
   def update
