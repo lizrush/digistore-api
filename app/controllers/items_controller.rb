@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
 
     if @item.save
-      render json: @item, status: :created
+      render "show"
     else
       render json: @item.errors, status: :unprocessable_entity
     end
