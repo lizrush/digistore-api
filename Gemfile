@@ -7,15 +7,6 @@ gem 'rails', '4.0.3'
 gem 'jbuilder', '~> 1.2'
 gem 'pg'
 gem 'rack-cors'
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
 
-group :development, :test do
-  gem 'rspec-rails'
-  gem "factory_girl_rails"
-  gem 'json_spec'
-end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
